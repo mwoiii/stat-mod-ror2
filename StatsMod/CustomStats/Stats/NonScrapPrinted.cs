@@ -20,7 +20,7 @@ namespace StatsMod.CustomStats {
             int itemIndexLoc = 20;
             if (c.TryGotoNext(
                 x => x.MatchLdloc(out itemIndexLoc),
-                x => x.MatchLdfld<Inventory.ItemAndStackValues>("itemIndex"),
+                x => x.MatchLdfld<Inventory.ItemAndStackValues>(nameof(Inventory.ItemAndStackValues.itemIndex)),
                 x => x.MatchLdloc(out _),
                 x => x.MatchBeq(out var _)
                 )) {
